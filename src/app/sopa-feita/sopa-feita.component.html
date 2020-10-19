@@ -1,0 +1,10 @@
+<h1>Aqui esta a sopa gerada</h1>
+<div>
+    <table class="sopagerada">
+        <tr *ngFor="let row of sopaLetras">
+            <th *ngFor="let column of row">
+                {{column}}
+            </th>
+        </tr>
+    </table>
+</div>
