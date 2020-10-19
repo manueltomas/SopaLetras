@@ -16,7 +16,6 @@ export class SopaGeneratorService {
     this.insert(result, aux);
     //this.resultString = this.arrayToString(result);
     this.resultString = result;
-    console.log(this.resultString);
   }
 
   populate(array, x, y){
@@ -33,7 +32,6 @@ export class SopaGeneratorService {
   insert(array : any[][], words : string[]){
     var posicoes : Palavra[] = [];
     words.forEach(palavra => {
-      console.log("Palavra: " + palavra);
       palavra = palavra.toUpperCase();
       var position :number = Math.round(Math.random());
       console.log(position);
@@ -47,7 +45,6 @@ export class SopaGeneratorService {
         posicoes.push({
           posicoes: this.makePoints(x,y,position,palavra.length)
         })
-        console.log(posicoes);
         for (let i = y; i < palavra.length + y; i++) {
           array[i][x] = palavra.charAt(i - y);
         }
@@ -61,7 +58,6 @@ export class SopaGeneratorService {
         posicoes.push({
           posicoes: this.makePoints(x,y,position,palavra.length)
         })
-        console.log(posicoes);
         for (let i = x; i < palavra.length + x; i++) {
           array[y][i] = palavra.charAt(i - x);
         }
@@ -86,11 +82,7 @@ export class SopaGeneratorService {
       const value = aux[i];
       for(var j = 0; j < palavra.posicoes.length; j++){
         const string = palavra.posicoes[j];
-        console.log(value);
-        console.log(string);
-        console.log(value === string);
         if(value === string){
-          console.log("deu true");
           return true;
         }
       }
@@ -122,17 +114,4 @@ export class SopaGeneratorService {
     });
     return result;
   }
-  /*
-    private String arrayToString(char[][] array) {
-        StringBuilder sBuilder = new StringBuilder();
-        for (char[] linha : array) {
-            for (char coluna : linha) {
-                sBuilder.append(coluna + " ");
-            }
-            sBuilder.deleteCharAt(sBuilder.length()-1);
-            sBuilder.append('\n');
-        }
-        return sBuilder.toString();
-    }
-  */
 }

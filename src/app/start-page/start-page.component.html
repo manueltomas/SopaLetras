@@ -1,6 +1,8 @@
 <h1>Insira as palavras que quer adicionar a sopa de letras</h1>
 <h4>Separe as palavras por espacos</h4>
-<input type="text" [(ngModel)]="palavras">
-<input type="number" [(ngModel)]="linhas">
-<input type="number" [(ngModel)]="colunas">
+<textarea rows="4" cols = "50" [(ngModel)]="palavras"></textarea><br><br>
+<legend>Numero de linhas:</legend>
+<input type="number" [(ngModel)]="linhas"><br><br>
+<legend>Numero de colunas:</legend>
+<input type="number" [(ngModel)]="colunas"><br><br>
 <button (click)="generate()">Gerar sopa de letras</button>
